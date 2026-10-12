@@ -1,38 +1,247 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #eef5ff, #f7f3ff, #eafaf4);
+  color: #17233c;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app {
+  width: 90%;
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 60px 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.hero {
+  border-left: 7px solid #f5c744;
+  margin-bottom: 30px;
+  padding-left: 22px;
+}
+
+.hero-top {
   align-items: center;
+  display: flex;
+  gap: 12px;
+}
+
+.hero-icon {
+  align-items: center;
+  background: linear-gradient(135deg, #245584, #247ba0);
+  border-radius: 12px;
+  display: flex;
+  font-size: 24px;
+  height: 46px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  width: 46px;
+}
+
+.hero-top .eyebrow {
+  margin: 0;
+}
+
+.eyebrow {
+  color: #247ba0;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+h1 {
+  color: #173b6c;
+  font-size: 42px;
+  margin: 18px 0 15px;
+}
+
+h2 {
+  color: #173b6c;
+  margin: 0;
+  font-size: 28px;
+}
+
+.hero-text {
+  color: #52606d;
+  font-size: 17px;
+  line-height: 1.6;
+  max-width: 650px;
+}
+
+.feature-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.feature-row span {
+  background-color: white;
+  border: 1px solid #dce5f2;
+  border-radius: 20px;
+  color: #245584;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 9px 12px;
+}
+
+.planner-card,
+.schedule-card {
+  background-color: white;
+  border: 1px solid #dce5f2;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(33, 67, 116, 0.12);
+  padding: 30px;
+  margin-bottom: 24px;
+}
+
+.form-section {
+  margin-bottom: 25px;
+}
+
+label,
+.label-text {
+  color: #173b6c;
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.selection-text {
+  color: #247ba0;
+  font-size: 14px;
+  font-weight: bold;
+  margin: -4px 0 12px;
+}
+
+select {
+  width: 100%;
+  border: 2px solid #d6e2f2;
+  border-radius: 8px;
+  color: #17233c;
+  font-size: 16px;
+  padding: 12px;
+}
+
+select:focus {
+  border-color: #247ba0;
+  outline: none;
+}
+
+.days {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.day {
+  background-color: #eaf3ff;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  color: #245584;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 12px 16px;
+}
+
+.day:hover {
+  background-color: #d8eaff;
+  border-color: #90c6f5;
+}
+
+.day.active {
+  background-color: #247ba0;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.build-button {
+  width: 100%;
+  background: linear-gradient(90deg, #245584, #247ba0);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: bold;
+  padding: 14px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.build-button:hover {
+  background: linear-gradient(90deg, #173b6c, #166788);
+}
+
+.build-button:disabled {
+  background: #aebccc;
+  cursor: not-allowed;
+}
+
+.hint {
+  color: #7b8794;
+  font-size: 14px;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.schedule-heading {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.schedule-heading span {
+  background-color: #fff3c9;
+  border-radius: 20px;
+  color: #7a5a00;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 8px 12px;
+}
+
+.schedule-list {
+  display: grid;
+  gap: 12px;
+}
+
+.workout-row {
+  align-items: center;
+  background-color: #f7fbff;
+  border-left: 5px solid #f5c744;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+}
+
+.workout-row strong {
+  color: #173b6c;
+}
+
+.workout-row span {
+  color: #52606d;
+}
+
+@media (max-width: 600px) {
+  .app {
+    padding: 35px 0;
   }
-  to {
-    transform: rotate(360deg);
+
+  h1 {
+    font-size: 32px;
+  }
+
+  .planner-card,
+  .schedule-card {
+    padding: 22px;
+  }
+
+  .schedule-heading,
+  .workout-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
   }
 }
